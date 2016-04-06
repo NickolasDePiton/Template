@@ -5,12 +5,12 @@
 #include <stdlib.h>
 #include <fstream>
 using namespace std;
-template < typename massiv> class Matrix 
+template < typename SomeValueType> class Matrix  
 {
 private:
 	int lines;
 	int columns;
-	int **massiv;
+	SomeValueType **matrix;
 public:
 	int cout_columns() const;
 	int cout_lines() const;
@@ -22,7 +22,7 @@ public:
 	void print_matrix() const;
 	Matrix operator + (const Matrix &array);
 	Matrix operator * (const Matrix &array);
-	int* operator [](int i) const;
+	SomeValueType* operator [](int i) const;
 	Matrix &operator = (Matrix &a);
 	void reset();
 	bool operator ==(const Matrix &array) const;
