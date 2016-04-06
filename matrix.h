@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <fstream>
 using namespace std;
-class Matrix
+template < typename massiv> class Matrix 
 {
 private:
 	int lines;
@@ -26,6 +26,8 @@ public:
 	Matrix &operator = (Matrix &a);
 	void reset();
 	bool operator ==(const Matrix &array) const;
+	friend ostream &operator << (ostream &cout, const Matrix &temp);
+	friend istream &operator >> (istream &input, Matrix &matr);
 
 };
 
